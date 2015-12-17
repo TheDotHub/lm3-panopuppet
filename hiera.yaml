@@ -1,0 +1,9 @@
+---
+:backends:
+  - json
+:json:
+  :datadir: data
+:hierarchy:
+  - "%{::clientcert}"
+  - "%{::osfamily}"
+:logger: console

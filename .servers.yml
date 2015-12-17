@@ -1,0 +1,6 @@
+---
+- name: panopuppet
+  box: puppetlabs/centos-6.6-64-puppet
+  hostname: panopuppet.server
+  ram: 1024
+
