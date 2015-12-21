@@ -1,5 +1,7 @@
 {
     "classes" : [
       "panopuppet"
-    ]
+    ],
+
+    "panopuppet::django_version" : "1.7" 
 }

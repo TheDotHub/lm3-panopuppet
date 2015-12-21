@@ -20,7 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.cpus   = 2
       end
 
-      srv.vm.network "forwarded_port", guest: 80, host: 8090, auto_correct: true # winrm
+      srv.vm.network "forwarded_port", guest: 80, host: 8090, auto_correct: true
 
       srv.vm.provision "puppet" do |puppet|
         puppet.module_path   = ["development/modules","modules"]

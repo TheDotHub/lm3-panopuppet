@@ -3,6 +3,10 @@
 #
 class panopuppet::pre(){
 
+  case $osfamily {
+
+  'RedHat':{
+  
   package{ 'git':
     ensure => present,
   }
@@ -28,5 +32,8 @@ class panopuppet::pre(){
               'python-virtualenvwrapper' #TODO: remove in the future
             ] :
     ensure  => present,
+  }
+  }
+  default: { fail("Module ${module_name} is not supported on ${::operatingsystem} ${::operatingsystemrelease}") }
   }
 }
