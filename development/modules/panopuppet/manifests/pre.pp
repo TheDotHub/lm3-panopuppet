@@ -8,7 +8,7 @@ class panopuppet::pre(){
   'RedHat':{
   
   package{ 'git':
-    ensure => present,
+    ensure => installed,
   }
 
   package {'epel-release':
