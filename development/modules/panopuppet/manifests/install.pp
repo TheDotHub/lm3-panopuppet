@@ -60,6 +60,14 @@ class panopuppet::install{
     path      => ['/usr/bin','/bin'],
   } ->
 
+  #TODO: create super user command #14
+  exec { 'createsuperuser':
+    command   => "bash -c 'source /srv/.virtualenvs/panopuppet/bin/activate; python manage.py createsuperuser'",
+    logoutput => true,
+    cwd       => '/srv/repo/panopuppet',
+    path      => ['/usr/bin','/bin'],
+  } ->
+
   exec { 'update-permissions':
     command     => "chown -R apache:apache /srv/repo/panopuppet",
     logoutput   => true,
