@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.network "forwarded_port", guest: 80, host: 8090, auto_correct: true
 
       srv.vm.provision "puppet" do |puppet|
-        puppet.module_path   = ["development/modules"]
+        puppet.module_path   = ["development/modules","modules"]
         puppet.environment = "development"
         puppet.hiera_config_path = "hiera.yaml"
         puppet.working_directory = "/tmp/vagrant-puppet/environments"

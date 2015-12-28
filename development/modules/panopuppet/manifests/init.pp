@@ -9,6 +9,5 @@ class panopuppet(
 
   class { 'panopuppet::pre':       } ->
   class { 'panopuppet::install':   } ->
-  class { 'panopuppet::configure': } ->
   class { 'panopuppet::webserver': }
 }

@@ -14,6 +14,11 @@ class panopuppet::install{
     revision => 'master',
   } ->
 
+  file { '/srv/repo/panopuppet/config.yaml': 
+    ensure  => present,
+    content => template('panopuppet/config.yaml.erb'),
+  } ->
+
   file { '/srv/.virtualenvs' :
     ensure => directory,
   } ->
